@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fc">
+  <meta name="description" content="Личный визуальный справочник с проектами, разделами и заметками.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Мой справочник</title>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="rail">
+    <div class="brand"><div class="brand-icon">▣</div><div><b>Мой</b><span>Справочник</span></div></div>
+    <button class="nav-item active" data-page="projects"><span>▰</span>Проекты</button>
+    <button class="nav-item" data-page="settings"><span>⚙</span>Настройки</button>
+    <div class="sync-state" id="syncState"><i></i><span>Только на этом устройстве</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-brand" id="mobileHome">▣ Мой справочник</button>
+      <div class="breadcrumbs" id="breadcrumbs">Проекты</div>
+      <div class="top-actions">
+        <button class="icon-btn" id="searchBtn" title="Поиск">⌕</button>
+        <button class="icon-btn" id="addTopBtn" title="Создать">＋</button>
+        <button class="icon-btn" id="menuBtn" title="Дополнительно">⋯</button>
+      </div>
+    </header>
+    <section id="view" class="view"></section>
+  </main>
+</div>
+
+<div class="modal-backdrop hidden" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head"><h2 id="modalTitle">Создать</h2><button class="icon-btn" id="modalClose">×</button></div>
+    <div id="modalBody"></div>
+    <div class="modal-actions" id="modalActions"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
